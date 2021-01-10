@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    var userLang = navigator.languages && navigator.languages[0] || // Chrome / Firefox
+        navigator.language ||   // All browsers
+        navigator.userLanguage; // IE <= 10
+    var uL = String(userLang);
+    let oldstring = String(window.location);
+    const regex = RegExp('index.html');
+    if (regex.test(oldstring) == true) {
+        if (uL.indexOf("en") !== -1) {
+            window.location.replace(oldstring.replace("index","index-en"));
+        } else if (uL.indexOf("de") !== -1){
+            window.location.replace(oldstring.replace("index","index-de"));
+        }else{
+            window.location.replace(oldstring.replace("index","index-en"));
+        }
+    }else{
+        window.location.replace(oldstring.concat("index.html"));
+    }
+</script>
+Redirecting...
+to <a href="index-en.html">English Version</a>
+to <a href="index-de.html">German Version</a>
+to <a href="stepbystepdoublelaunch.html">Tutorial</a>

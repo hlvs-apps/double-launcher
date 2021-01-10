@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    var userLang = navigator.languages && navigator.languages[0] || // Chrome / Firefox
+        navigator.language ||   // All browsers
+        navigator.userLanguage; // IE <= 10
+    var uL = String(userLang);
+let oldstring = String(window.location);
+const regex = RegExp('apptermspolicy.html');
+if(regex.test(oldstring)==true){
+    if (uL.indexOf("en") !== -1){
+    window.location.replace(oldstring.replace("apptermspolicy","apptermspolicy-en"));
+    } else if (uL.indexOf("de") !== -1){
+    window.location.replace(oldstring.replace("apptermspolicy","apptermspolicy-de"));
+  }
+  else{
+    window.location.replace(oldstring.replace("apptermspolicy","apptermspolicy-en"));
+  }
+}else{
+  window.location.replace(oldstring.concat("apptermspolicy.html"));
+}
+</script>
+Redirecting...
+to <a href="apptermspolicy-en.html">English Version</a>
+to <a href="apptermspolicy-de.html">German Version</a>

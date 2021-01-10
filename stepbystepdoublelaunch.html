@@ -1,0 +1,23 @@
+<script type="text/javascript">
+    var userLang = navigator.languages && navigator.languages[0] || // Chrome / Firefox
+        navigator.language ||   // All browsers
+        navigator.userLanguage; // IE <= 10
+    var uL = String(userLang);
+let oldstring = String(window.location);
+    const regex = RegExp('stepbystepdoublelaunch.html');
+if(regex.test(oldstring)==true){
+    if (uL.indexOf("en") !== -1){
+        window.location.replace(oldstring.replace("stepbystepdoublelaunch","stepbystepdoublelaunchEN"));
+    } else if (uL.indexOf("de") !== -1){
+        window.location.replace(oldstring.replace("stepbystepdoublelaunch","stepbystepdoublelaunchDE"));
+  }
+  else{
+        window.location.replace(oldstring.replace("stepbystepdoublelaunch","stepbystepdoublelaunchEN"));
+  }
+}else{
+    window.location.replace(oldstring.concat("stepbystepdoublelaunch.html"));
+}
+</script>
+Redirecting...
+to <a href="stepbystepdoublelaunchEN.html">English Version</a>
+to <a href="stepbystepdoublelaunchDE.html">German Version</a>
